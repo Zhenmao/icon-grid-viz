@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Icon Grid Viz</title>
+		<style>
+			body {
+				margin: 0;
+			}
+
+			.charts {
+				width: 100vw;
+				display: flex;
+			}
+
+			.chart {
+				flex: 1;
+				margin: 10px;
+			}
+		</style>
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="icon-grid-viz.css" />
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="icon-grid-viz.js"></script>
+	</head>
+	<body>
+		<div class="charts">
+			<div class="chart chart-1"></div>
+			<div class="chart chart-2"></div>
+			<div class="chart chart-3"></div>
+		</div>
+		<script>
+			iconGridViz({
+				el: document.getElementsByClassName("chart-1")[0],
+				size: 36,
+				num: 14,
+				den: 36,
+				icon: "person",
+				lblTitle: "Title label",
+				lblNum: "Num",
+				lblDen: "Den"
+			});
+			iconGridViz({
+				el: document.getElementsByClassName("chart-2")[0],
+				size: 25,
+				num: 18,
+				den: 25,
+				icon: "house",
+				back: "#b2df8a",
+				fill: "#33a02c",
+				lblTitle: "Decision",
+				lblNum: "Yes",
+				lblDen: "No"
+			});
+			iconGridViz({
+				el: document.getElementsByClassName("chart-3")[0],
+				size: 100,
+				num: 0.72,
+				icon: "pill",
+				back: "#ef8a62",
+				fill: "#67a9cf",
+				lblTitle: "Result",
+				lblNum: "Positive",
+				lblDen: "Negative"
+			});
+		</script>
+	</body>
+</html>
